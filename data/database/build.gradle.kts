@@ -2,6 +2,9 @@ plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
     id("io.gitlab.arturbosch.detekt")
+    id("kotlin-parcelize")
+    kotlin("kapt")
+
 }
 buildscript {
     repositories {
@@ -36,17 +39,41 @@ android {
             )
         }
     }
-    kotlin {
-        jvmToolchain(ProjectConfig.jdkVersion)
-    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
+    kotlin {
+        jvmToolchain(ProjectConfig.jdkVersion)
+    }
+    kapt {
+        correctErrorTypes = true
+    }
     kotlinOptions {
         jvmTarget = ProjectConfig.jvmTarget
+    }
+    packaging {
+        resources.excludes.add("META-INF/gradle/incremental.annotation.processors")
     }
 }
 
 dependencies {
+
+    //Core
+    implementation(libs.gson)
+    implementation(libs.core.ktx)
+
+    //Dagger + Hilt
+    implementation(libs.dagger.hilt)
+    implementation(libs.hilt.compiler)
+    kapt(libs.hilt.compiler)
+
+    //Retrofit
+    implementation(libs.retrofit2)
+    implementation(libs.retrofit2.gson)
+
+    //Modules
+    implementation(project(":feature:home"))
+    implementation(project(":feature:monsters"))
+
 }

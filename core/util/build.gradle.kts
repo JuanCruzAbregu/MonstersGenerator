@@ -46,6 +46,9 @@ android {
     kotlinOptions {
         jvmTarget = ProjectConfig.jvmTarget
     }
+    packaging {
+        resources.excludes.add("META-INF/gradle/incremental.annotation.processors")
+    }
 }
 
 dependencies {

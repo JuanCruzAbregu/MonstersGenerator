@@ -1,3 +1,4 @@
+
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
@@ -44,6 +45,9 @@ android {
     }
     kotlinOptions {
         jvmTarget = ProjectConfig.jvmTarget
+    }
+    packaging {
+        resources.excludes.add("META-INF/gradle/incremental.annotation.processors")
     }
 }
 
