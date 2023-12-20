@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Monsters Generator</string>
+    <string name="back">Atrás</string>
 </resources>
