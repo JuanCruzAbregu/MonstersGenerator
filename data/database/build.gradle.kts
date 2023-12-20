@@ -75,5 +75,6 @@ dependencies {
     //Modules
     implementation(project(":feature:home"))
     implementation(project(":feature:monsters"))
+    implementation(project(":core:util"))
 
 }
