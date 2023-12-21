@@ -77,9 +77,13 @@ dependencies {
     implementation(libs.core.ktx)
     //Compose
     implementation(libs.activity.compose)
+    implementation(libs.nav.compose)
+    implementation(platform(libs.compose.bom))
     //Modules
     implementation(project(":core:ui"))
     implementation(project(":core:util"))
     implementation(project(":data:database"))
-    implementation(project(":feature:home"))
+    implementation(project(":feature:generator"))
+    implementation(project(":feature:monsters"))
+
 }

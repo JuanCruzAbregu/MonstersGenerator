@@ -71,9 +71,9 @@ dependencies {
     //Retrofit
     implementation(libs.retrofit2)
     implementation(libs.retrofit2.gson)
+    implementation(project(":feature:generator"))
 
     //Modules
-    implementation(project(":feature:home"))
     implementation(project(":feature:monsters"))
     implementation(project(":core:util"))
 

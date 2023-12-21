@@ -65,6 +65,7 @@ dependencies {
     implementation(libs.lifecycle.runtime)
     //Compose
     implementation(libs.activity.compose)
+    implementation(libs.nav.compose)
     implementation(platform(libs.compose.bom))
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.ui:ui-graphics")
@@ -75,7 +76,7 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-runtime-compose")
 
     //Modules
-//    implementation(project(":core:ui"))
-//    implementation(project(":core:util"))
+    implementation(project(":core:ui"))
+    implementation(project(":core:util"))
 //    implementation(project(":data:database"))
 }

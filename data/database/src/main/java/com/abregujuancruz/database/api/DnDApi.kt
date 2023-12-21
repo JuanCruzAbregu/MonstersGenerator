@@ -1,8 +1,8 @@
 package com.abregujuancruz.database.api
 
-import com.abregujuancruz.home.model.HomeResponse
-import com.example.monsters.model.MonsterData
-import com.example.monsters.model.MonstersResponse
+import com.abregujuancruz.generator.ui.model.GeneratorResponse
+import com.example.monsters.ui.model.MonsterData
+import com.example.monsters.ui.model.MonstersResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -10,7 +10,7 @@ import retrofit2.http.Path
 interface DnDApi {
 
     @GET("api")
-    suspend fun getDnDResponse(): Response<HomeResponse>
+    suspend fun getDnDResponse(): Response<GeneratorResponse>
 
 
     @GET("api/monsters")
