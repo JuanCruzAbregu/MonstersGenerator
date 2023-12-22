@@ -72,8 +72,6 @@ dependencies {
     implementation("androidx.compose.ui:ui-tooling")
     implementation("androidx.compose.ui:ui-tooling-preview")
     implementation("androidx.compose.material3:material3")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-compose")
-    implementation("androidx.lifecycle:lifecycle-runtime-compose")
 
     //Modules
     implementation(project(":core:ui"))

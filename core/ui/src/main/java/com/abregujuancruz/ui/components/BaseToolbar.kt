@@ -18,7 +18,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.abregujuancruz.theme.Actionable
 import com.abregujuancruz.ui.R
 
 enum class Toolbar {
@@ -29,80 +28,73 @@ enum class Toolbar {
 @Composable
 fun BaseToolbar(
     toolbarState: Toolbar,
-    onClick: Actionable?,
+    onClick: (() -> Unit)? = null,
     title: String
 ) {
     when (toolbarState) {
-        Toolbar.DEFAULT -> DefaultToolbar(title = title, onClick = onClick)
+        Toolbar.DEFAULT -> DefaultToolbar(title = title)
         Toolbar.BACK -> BackToolbar(title = title, onClick = onClick ?: {})
     }
 }
 
 @Composable
 private fun DefaultToolbar(
-    title: String,
-    onClick: Actionable?
+    title: String
 ) {
-    if (onClick == null) {
-        Row(
-            verticalAlignment = Alignment.CenterVertically,
+    Row(
+        verticalAlignment = Alignment.CenterVertically,
+        modifier = Modifier
+            .fillMaxWidth()
+            .defaultMinSize(minHeight = 48.dp)
+            .background(
+                color = MaterialTheme.colorScheme.background
+            )
+    ) {
+        Text(
             modifier = Modifier
                 .fillMaxWidth()
-                .defaultMinSize(minHeight = 48.dp)
-                .background(
-                    color = MaterialTheme.colorScheme.background
-                )
-        ) {
-            Text(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(start = 46.dp),
-                text = title,
-                style = MaterialTheme.typography.titleLarge
-            )
-        }
+                .padding(start = 46.dp),
+            text = title,
+            style = MaterialTheme.typography.titleLarge
+        )
     }
-
 }
 
 @Composable
 private fun BackToolbar(
     title: String,
-    onClick: Actionable?
+    onClick: () -> Unit
 ) {
-    if (onClick != null) {
-        Row(
-            verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.Start,
-            modifier = Modifier
-                .wrapContentHeight()
-                .fillMaxWidth()
-                .defaultMinSize(minHeight = 48.dp)
-                .background(
-                    MaterialTheme.colorScheme.background
-                )
-        ) {
-            IconButton(onClick = onClick) {
-                Icon(
-                    painter = painterResource(id = R.drawable.ic_back),
-                    contentDescription = stringResource(id = R.string.back)
-                )
-            }
-
-            Text(
-                modifier = Modifier.fillMaxWidth(),
-                text = title,
-                style = MaterialTheme.typography.titleLarge
+    Row(
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.Start,
+        modifier = Modifier
+            .wrapContentHeight()
+            .fillMaxWidth()
+            .defaultMinSize(minHeight = 48.dp)
+            .background(
+                MaterialTheme.colorScheme.background
+            )
+    ) {
+        IconButton(onClick = onClick) {
+            Icon(
+                painter = painterResource(id = R.drawable.ic_back),
+                contentDescription = stringResource(id = R.string.back)
             )
         }
-    }
 
+        Text(
+            modifier = Modifier.fillMaxWidth(),
+            text = title,
+            style = MaterialTheme.typography.titleLarge
+        )
+    }
 }
 
 @Preview
 @Composable
 private fun DefaultToolbarPreview() {
-    BaseToolbar(Toolbar.DEFAULT, null, "Titulo")
+    BaseToolbar(Toolbar.DEFAULT, {}, "Titulo")
 }
 
 @Preview

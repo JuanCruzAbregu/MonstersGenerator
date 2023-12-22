@@ -4,28 +4,27 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import com.abregujuancruz.generator.navigation.generatorRoute
-import com.abregujuancruz.util.Screens
+import com.abregujuancruz.navigation.model.BottomNavItems
 import com.example.monsters.navigation.monstersRoute
 
 @Composable
 fun SetupNavGraph(
-    startDestination: String,
     navController: NavHostController
 ) {
     NavHost(
         navController = navController,
-        startDestination = startDestination
+        startDestination = BottomNavItems.Generator.route
     ) {
         generatorRoute(
             navigateToMonstersScreen = {
                 navController.popBackStack()
-                navController.navigate(Screens.Monsters.route)
+                navController.navigate(BottomNavItems.Monsters.route)
             }
         )
         monstersRoute(
             navigateToGeneratorScreen = {
                 navController.popBackStack()
-                navController.navigate(Screens.Generator.route)
+                navController.navigate(BottomNavItems.Generator.route)
             }
         )
     }

@@ -3,13 +3,12 @@ package com.abregujuancruz.generator.navigation
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import com.abregujuancruz.generator.ui.view.GeneratorScreen
-import com.abregujuancruz.theme.Actionable
-import com.abregujuancruz.util.Screens
+import com.abregujuancruz.navigation.model.BottomNavItems
 
 fun NavGraphBuilder.generatorRoute(
-    navigateToMonstersScreen: Actionable
+    navigateToMonstersScreen: () -> Unit
 ) {
-    composable(route = Screens.Generator.route) {
+    composable(route = BottomNavItems.Generator.route) {
         GeneratorScreen(navigateToMonstersScreen)
     }
 }

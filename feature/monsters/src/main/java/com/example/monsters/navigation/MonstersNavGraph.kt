@@ -2,14 +2,13 @@ package com.example.monsters.navigation
 
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
-import com.abregujuancruz.theme.Actionable
-import com.abregujuancruz.util.Screens
+import com.abregujuancruz.navigation.model.BottomNavItems
 import com.example.monsters.ui.view.MonstersScreen
 
 fun NavGraphBuilder.monstersRoute(
-    navigateToGeneratorScreen: Actionable
+    navigateToGeneratorScreen: () -> Unit
 ) {
-    composable(route = Screens.Monsters.route) {
+    composable(route = BottomNavItems.Monsters.route) {
         MonstersScreen(navigateToGeneratorScreen)
     }
 }

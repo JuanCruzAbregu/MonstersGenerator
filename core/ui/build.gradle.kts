@@ -1,4 +1,3 @@
-
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
@@ -58,14 +57,18 @@ android {
 }
 
 dependencies {
+
     //Compose
     implementation(libs.activity.compose)
     implementation(platform(libs.compose.bom))
+    implementation(libs.nav.compose)
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.ui:ui-graphics")
     implementation("androidx.compose.ui:ui-tooling")
     implementation("androidx.compose.ui:ui-tooling-preview")
     implementation("androidx.compose.material3:material3")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-compose")
-    implementation("androidx.lifecycle:lifecycle-runtime-compose")
+
+    //Modules
+    implementation(project(":core:util"))
+
 }
