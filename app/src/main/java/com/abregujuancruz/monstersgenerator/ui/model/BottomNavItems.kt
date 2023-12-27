@@ -1,4 +1,4 @@
-package com.abregujuancruz.navigation.model
+package com.abregujuancruz.monstersgenerator.ui.model
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AddCircle

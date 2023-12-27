@@ -1,50 +1,31 @@
 package com.abregujuancruz.generator.ui.view
 
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.material3.Button
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.abregujuancruz.theme.AppTheme
-import com.abregujuancruz.theme.light_background
-import com.abregujuancruz.ui.components.BaseScreen
-import com.abregujuancruz.ui.components.BaseToolbar
-import com.abregujuancruz.ui.components.Toolbar
 
 @Composable
-fun GeneratorScreen(
-    navigateToMonstersScreen: () -> Unit,
-) {
+fun GeneratorScreen() {
     AppTheme {
-        BaseScreen(
-            customToolbar = {
-                BaseToolbar(
-                    toolbarState = Toolbar.DEFAULT,
-                    title = "Generator"
+        Scaffold {
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(it)
+            ) {
+                Text(
+                    modifier = Modifier.align(Alignment.Center),
+                    text = "Generator Screen"
                 )
-            },
-            backgroundColor = light_background,
-            content = { ScreenContent(navigateToMonstersScreen) }
-        )
-    }
-}
-
-@Composable
-private fun ScreenContent(navigateToMonstersScreen: () -> Unit) {
-
-    Button(
-        modifier = Modifier.fillMaxWidth(),
-        onClick = { }
-    ) {
-        Text(text = "Generar")
-    }
-
-    Button(
-        modifier = Modifier.fillMaxWidth(),
-        onClick = navigateToMonstersScreen
-    ) {
-        Text(text = "Navegar a Monsters")
+            }
+        }
     }
 }
 
@@ -52,6 +33,6 @@ private fun ScreenContent(navigateToMonstersScreen: () -> Unit) {
 @Composable
 private fun Preview() {
     AppTheme {
-        GeneratorScreen(navigateToMonstersScreen = {})
+        GeneratorScreen()
     }
 }
