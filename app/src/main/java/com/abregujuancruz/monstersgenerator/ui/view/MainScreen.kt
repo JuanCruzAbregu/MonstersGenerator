@@ -17,7 +17,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.abregujuancruz.monstersgenerator.navigation.AppNavGraph
-import com.abregujuancruz.monstersgenerator.ui.model.BottomNavItems
+import com.abregujuancruz.monstersgenerator.navigation.model.BottomNavItems
 import com.abregujuancruz.theme.AppTheme
 import com.abregujuancruz.ui.components.BaseToolbar
 import com.abregujuancruz.ui.components.Toolbar
