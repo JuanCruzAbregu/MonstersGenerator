@@ -20,7 +20,7 @@ detekt {
     config.setFrom(file("$rootDir/config/detekt/detekt.yml"))
 }
 android {
-    namespace = "com.abregujuancruz.home"
+    namespace = "com.example.data"
     compileSdk = ProjectConfig.compileSdk
 
     defaultConfig {
@@ -30,6 +30,15 @@ android {
         consumerProguardFiles("consumer-rules.pro")
     }
 
+    buildTypes {
+        release {
+            isMinifyEnabled = false
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+        }
+    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
@@ -40,12 +49,6 @@ android {
     kapt {
         correctErrorTypes = true
     }
-    buildFeatures {
-        compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = ProjectConfig.kotlinCompiler
-    }
     kotlinOptions {
         jvmTarget = ProjectConfig.jvmTarget
     }
@@ -55,26 +58,20 @@ android {
 }
 
 dependencies {
-    // Dagger + Hilt
-    implementation(libs.dagger.hilt)
-    implementation(libs.hilt.nav.compose)
-    kapt(libs.hilt.compiler)
-    // Core
-    implementation(libs.core.ktx)
+    //Core
     implementation(libs.gson)
-    implementation(libs.lifecycle.runtime)
-    //Compose
-    implementation(libs.activity.compose)
-    implementation(libs.nav.compose)
-    implementation(platform(libs.compose.bom))
-    implementation("androidx.compose.ui:ui")
-    implementation("androidx.compose.ui:ui-graphics")
-    implementation("androidx.compose.ui:ui-tooling")
-    implementation("androidx.compose.ui:ui-tooling-preview")
-    implementation("androidx.compose.material3:material3")
+    implementation(libs.core.ktx)
+
+    //Dagger + Hilt
+    implementation(libs.dagger.hilt)
+    implementation(libs.hilt.compiler)
+    kapt(libs.hilt.compiler)
+
+    //Retrofit
+    implementation(libs.retrofit2)
+    implementation(libs.retrofit2.gson)
 
     //Modules
-    implementation(project(":core:ui"))
     implementation(project(":core:util"))
-    implementation(project(":data:generator-data"))
+
 }

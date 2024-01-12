@@ -1,10 +1,10 @@
-package com.abregujuancruz.home.data.model
+package com.abregujuancruz.data.model
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class HomeResponse(
+data class BaseResponse(
     val abilityScores: String? = null,
     val alignments: String? = null,
     val backgrounds: String? = null,

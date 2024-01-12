@@ -1,6 +1,6 @@
-package com.abregujuancruz.monsters.data.api
+package com.abregujuancruz.data.api
 
-import com.abregujuancruz.monsters.data.model.MonstersResponse
+import com.abregujuancruz.data.model.BaseResponse
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOf
@@ -10,11 +10,11 @@ import javax.inject.Inject
 class APIService @Inject constructor(
     private val dndAPI: DnDApi
 ) {
-    suspend fun getMonstersResponse(): Flow<MonstersResponse> =
+    suspend fun getBaseData(): Flow<BaseResponse> =
         flowOf(
             withContext(Dispatchers.IO) {
-                val response = dndAPI.getMonstersResponse()
-                response.body() ?: MonstersResponse()
+                val response = dndAPI.getBaseResponse()
+                response.body() ?: BaseResponse()
             }
         )
 }
