@@ -69,9 +69,11 @@ android {
 
 dependencies {
 
-    // Hilt
+    // Dagger + Hilt
     implementation(libs.dagger.hilt)
+    implementation(libs.hilt.nav.compose)
     kapt(libs.hilt.compiler)
+
     // Core
     implementation(libs.lifecycle.runtime)
     implementation(libs.core.ktx)
