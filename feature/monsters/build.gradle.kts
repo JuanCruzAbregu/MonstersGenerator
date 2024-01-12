@@ -78,5 +78,5 @@ dependencies {
     //Modules
     implementation(project(":core:ui"))
     implementation(project(":core:util"))
-//    implementation(project(":data:database"))
+    implementation(project(":data:monsters-data"))
 }

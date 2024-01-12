@@ -88,7 +88,7 @@ dependencies {
     //Modules
     implementation(project(":core:ui"))
     implementation(project(":core:util"))
-    implementation(project(":data:database"))
+    implementation(project(":data:home-data"))
     implementation(project(":feature:generator"))
     implementation(project(":feature:monsters"))
 
