@@ -4,6 +4,7 @@ coreVersion = "1.12.0"
 lifecycleVersion = "2.7.0"
 activityVersion = "1.8.2"
 composeBomVersion = "2023.10.01"
+coilVersion = "2.5.0"
 buildGradle = "8.1.4"
 androidLibrary = "8.1.4"
 arturboshDetekt = "1.23.0"
@@ -27,6 +28,7 @@ hilt-compiler = { module = "com.google.dagger:hilt-android-compiler", version.re
 activity-compose = { module = "androidx.activity:activity-compose", version.ref = "activityVersion" }
 compose-bom = { module = "androidx.compose:compose-bom", version.ref = "composeBomVersion" }
 nav-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navVersion" }
+compose-coil = { module = "io.coil-kt:coil-compose", version.ref = "coilVersion" }
 core-ktx = { module = "androidx.core:core-ktx", version.ref = "coreVersion" }
 gson = { module = "com.google.code.gson:gson", version.ref = "gsonGson" }
 lifecycle-runtime = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycleVersion" }

@@ -1,10 +1,10 @@
-package com.abregujuancruz.monsters.data.model
+package com.abregujuancruz.monsters.ui.model
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class Dc(
+data class DcX(
     val dcType: DcType,
     val dcValue: Int,
     val successType: String

@@ -66,6 +66,7 @@ dependencies {
     //Compose
     implementation(libs.activity.compose)
     implementation(libs.nav.compose)
+    implementation(libs.compose.coil)
     implementation(platform(libs.compose.bom))
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.ui:ui-graphics")
