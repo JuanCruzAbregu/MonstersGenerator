@@ -6,8 +6,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.abregujuancruz.generator.ui.view.GeneratorScreen
-import com.abregujuancruz.monstersgenerator.ui.model.BottomNavItems
-import com.example.monsters.ui.view.MonstersScreen
+import com.abregujuancruz.monsters.ui.view.MonstersScreen
+import com.abregujuancruz.monstersgenerator.navigation.model.BottomNavItems
 
 @Composable
 fun AppNavGraph(navController: NavHostController) {
