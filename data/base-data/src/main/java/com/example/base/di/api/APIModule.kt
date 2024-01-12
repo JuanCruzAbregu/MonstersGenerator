@@ -1,7 +1,7 @@
-package com.abregujuancruz.data.di
+package com.example.base.di.api
 
-import com.abregujuancruz.data.api.DnDApi
 import com.abregujuancruz.util.Constants
+import com.example.base.api.DnDApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -10,7 +10,7 @@ import retrofit2.Retrofit
 
 @Module
 @InstallIn(SingletonComponent::class)
-object APIModule {
+abstract class APIModule {
 
     @Provides
     fun provideAPIModule(): DnDApi {
