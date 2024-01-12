@@ -10,7 +10,7 @@ import retrofit2.Retrofit
 
 @Module
 @InstallIn(SingletonComponent::class)
-abstract class APIModule {
+object APIModule {
 
     @Provides
     fun provideAPIModule(): DnDApi {
