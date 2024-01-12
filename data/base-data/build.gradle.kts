@@ -15,12 +15,8 @@ buildscript {
     }
 }
 
-detekt {
-    toolVersion = ProjectConfig.detektVersion
-    config.setFrom(file("$rootDir/config/detekt/detekt.yml"))
-}
 android {
-    namespace = "com.example.data"
+    namespace = "com.example.base"
     compileSdk = ProjectConfig.compileSdk
 
     defaultConfig {

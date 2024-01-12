@@ -1,6 +1,6 @@
-package com.abregujuancruz.data.api
+package com.example.base.api
 
-import com.abregujuancruz.data.model.BaseResponse
+import com.example.base.model.BaseResponse
 import retrofit2.Response
 import retrofit2.http.GET
 

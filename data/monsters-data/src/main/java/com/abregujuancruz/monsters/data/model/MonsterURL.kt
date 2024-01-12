@@ -4,7 +4,8 @@ import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class MonstersResponse(
-    val count: Int? = null,
-    val results: List<MonstersURL>? = null
+data class MonsterURL(
+    val index: String? = null,
+    val name: String? = null,
+    val url: String? = null
 ) : Parcelable

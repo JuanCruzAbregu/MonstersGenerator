@@ -68,4 +68,6 @@ dependencies {
     implementation(libs.retrofit2)
     implementation(libs.retrofit2.gson)
 
+    //Modules
+    implementation(project(":core:util"))
 }

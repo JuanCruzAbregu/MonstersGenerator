@@ -1,6 +1,6 @@
-package com.abregujuancruz.data.di
+package com.abregujuancruz.monsters.data.di.api
 
-import com.abregujuancruz.data.api.DnDApi
+import com.abregujuancruz.monsters.data.api.MonsterApi
 import com.abregujuancruz.util.Constants
 import dagger.Module
 import dagger.Provides
@@ -13,10 +13,10 @@ import retrofit2.Retrofit
 object APIModule {
 
     @Provides
-    fun provideAPIModule(): DnDApi {
+    fun provideAPIModule(): MonsterApi {
         return Retrofit.Builder()
             .baseUrl(Constants.BASE_URL)
             .build()
-            .create(DnDApi::class.java)
+            .create(MonsterApi::class.java)
     }
 }
